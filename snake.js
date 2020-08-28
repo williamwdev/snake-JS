@@ -5,15 +5,15 @@ function update() {
   console.log('update snake')
 }
 
-function draw() {
+function draw(gameBoard) {
   snakeBody.forEach(segment => {
     const snakeElement = document.createElement('div');
-    snakeElement.style.gridRowStart = segment.x
-    snakeElement.style.gridColumnStart = segment.y
+    snakeElement.style.gridRowStart = segment.y
+    snakeElement.style.gridColumnStart = segment.x
+    snakeElement.classList.add('snake');
     gameBoard.appendChild(snakeElement);
-    snakeElement.classes.add('snake');
   })
-  console.log('draw snake')
+  // console.log('draw snake')
 }
 
 export { SNAKE_SPEED, update, draw }
